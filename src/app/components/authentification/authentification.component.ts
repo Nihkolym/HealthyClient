@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-authentification',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./authentification.component.css']
 })
 export class AuthentificationComponent {
-
+  @Input() title: string;
 }

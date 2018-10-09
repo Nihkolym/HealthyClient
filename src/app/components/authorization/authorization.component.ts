@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./authorization.component.css']
 })
 export class AuthorizationComponent {
-    public user = 'user';
+
 }

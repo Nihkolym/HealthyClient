@@ -34,7 +34,7 @@ module.exports = {
     hints: false,
   },
 
-  module: {
+  module: { 
     rules: [
       {
         test: /\.ts$/,
@@ -119,5 +119,6 @@ module.exports = {
         from: 'src/favicon.ico'
       }
     ])
-  ]
+  ],
+  watch: true
 };

@@ -5,6 +5,7 @@ const ProgressPlugin = require('webpack/lib/ProgressPlugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const { AngularCompilerPlugin } = require('@ngtools/webpack');
 const { IndexHtmlWebpackPlugin } = require('@angular-devkit/build-angular/src/angular-cli-files/plugins/index-html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
@@ -16,6 +17,28 @@ module.exports = {
     main: './src/main.ts',
     polyfills: './src/polyfills.ts',
     styles: './src/styles.css'
+  },
+
+  devServer: {
+    proxy: { 
+      '/**': {  //catch all requests
+        target: '/index.html',
+        secure: false,
+        historyApiFallback: true,
+        hot: true,
+        bypass: function(req, res, opt){
+          //your custom code to check for any exceptions
+          //console.log('bypass check', {req: req, res:res, opt: opt});
+          if(req.path.indexOf('/img/') !== -1 || req.path.indexOf('/public/') !== -1){
+            return '/'
+          }
+
+          if (req.headers.accept.indexOf('html') !== -1) {
+            return '/index.html';
+          }
+        }  
+      }
+    }
   },
 
   output: {
@@ -46,6 +69,10 @@ module.exports = {
         enforce: 'pre',
         use: 'source-map-loader'
       },
+      // {
+      //   test:/\.(s*)css$/,
+      //   use: ['style-loader','css-loader', 'sass-loader']
+      // },
       {
         test: /\.html$/,
         use: 'raw-loader'
@@ -81,7 +108,17 @@ module.exports = {
       {
         test: /[\/\\]@angular[\/\\]core[\/\\].+\.js$/,
         parser: { system: true },
-      }
+      },
+
+      {
+        test: /\.ts$/,
+        use: [
+            'angular-router-loader',
+            'awesome-typescript-loader',
+            'angular2-template-loader',
+            'source-map-loader',
+          ]
+      },
     ]
   },
 
@@ -95,7 +132,7 @@ module.exports = {
         'main'
       ]
     }),
-
+    
     new AngularCompilerPlugin({
       mainPath: resolve('./src/main.ts'),
       sourceMap: true,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authorization',
@@ -6,11 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./authorization.component.css']
 })
 export class AuthorizationComponent {
+
+  constructor(private router: Router) {
+
+  }
+
   public signUp() {
-    alert('dhawdhawhawd');
+    this.router.navigate([`/registration`]);
   }
 
   public signIn() {
-
+    alert('this is signIn');
   }
 }

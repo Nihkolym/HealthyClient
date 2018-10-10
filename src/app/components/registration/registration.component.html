@@ -1,4 +1,4 @@
-<app-auth-form [title]="'SIGN UP'">
+<app-auth-form [title]="'SIGN UP'" (leftButtonClick)="signUp()" (rightButtonClick)="signIn()">
     <mat-form-field>
         <input matInput placeholder="Phone*">
     </mat-form-field>

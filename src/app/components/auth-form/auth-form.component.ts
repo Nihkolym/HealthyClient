@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-auth-form',
@@ -6,5 +7,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./auth-form.component.css']
 })
 export class AuthFormComponent {
-  @Input() title: string;
+  @Input() public title: string;
+
+  public authForm = new FormGroup({
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required])
+  });
 }

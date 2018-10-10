@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./authorization.component.css']
 })
 export class AuthorizationComponent {
+  public signUp() {
+    alert('dhawdhawhawd');
+  }
 
+  public signIn() {
+
+  }
 }

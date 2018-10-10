@@ -11,7 +11,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthentificationRoutingModule } from './routes/authentification-routing.module';
 // tslint:disable-next-line:max-line-length
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatMenuModule, MatCardModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule } from '@angular/material';
-import { AuthentificationComponent } from './authentification.component';
 import { MaterialModule } from '../material/material.module';
 
 
@@ -19,8 +18,7 @@ import { MaterialModule } from '../material/material.module';
   declarations: [
     RegistrationComponent,
     AuthorizationComponent,
-    AuthFormComponent,
-    AuthentificationComponent,
+    AuthFormComponent
   ],
   imports: [
     ReactiveFormsModule,
@@ -28,7 +26,6 @@ import { MaterialModule } from '../material/material.module';
     MaterialModule
   ],
   exports: [
-    AuthentificationComponent
   ]
 
 })

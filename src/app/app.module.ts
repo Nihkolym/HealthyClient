@@ -1,54 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {
-  MatToolbarModule,
-  MatButtonModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
-  MatCardModule,
-  MatMenuModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatOptionModule,
-  MatSelectModule,
-} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AuthentificationRoutingModule } from './components/routes/authentification-routing.module';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { AuthorizationComponent } from './components/authorization/authorization.component';
-import { AuthentificationComponent } from './components/authentification/authentification.component';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthentificationModule } from './components/authentification.module';
+import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RegistrationComponent,
-    AuthorizationComponent,
-    AuthentificationComponent
+    AppComponent
   ],
   imports: [
     CommonModule,
+    RouterModule,
     ReactiveFormsModule,
-    AuthentificationRoutingModule,
-    BrowserModule,
+    AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatOptionModule,
-    MatSelectModule
+    AuthentificationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

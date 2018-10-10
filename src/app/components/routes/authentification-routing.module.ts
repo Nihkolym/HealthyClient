@@ -11,8 +11,7 @@ const authRoutes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(authRoutes,
-      { enableTracing: false })
+    RouterModule.forChild(authRoutes)
   ],
   exports: [
     RouterModule

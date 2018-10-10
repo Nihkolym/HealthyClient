@@ -1,0 +1,7 @@
+  :host /deep/ .sign-container_up{
+    order: 2;
+  }
+
+  :host /deep/ .sign-container_in{
+    order: 1;
+  }

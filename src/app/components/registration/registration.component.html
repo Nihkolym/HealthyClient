@@ -1,5 +1,21 @@
-<app-auth-form [title]="'SIGN UP'" (leftButtonClick)="signUp()" (rightButtonClick)="signIn()">
+<form class="authorization-container" [formGroup]="registForm">
+    <h2 class="authorization_title">SIGN UP</h2>
+    
+    <mat-form-field>
+        <input matInput placeholder="Email*">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Password*">
+    </mat-form-field>
+
     <mat-form-field>
         <input matInput placeholder="Phone*">
     </mat-form-field>
-</app-auth-form>
+    
+    <div class="authorization_sign-container">
+        <button class="sign-container_up" mat-button (click)="signIn()">SIGN IN</button>
+        <button class="sign-container_in" mat-button (click)="signUp()">SIGN UP</button>
+    </div>
+    
+</form>

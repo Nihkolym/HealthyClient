@@ -17,6 +17,6 @@ const authRoutes: Routes = [
     RouterModule
   ]
 })
-export class AuthentificationRoutingModule {
+export class AuthenticationRoutingModule {
 
 }

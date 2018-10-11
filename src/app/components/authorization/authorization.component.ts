@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { IUser } from 'src/app/user/user';
 import { AuthenticationService } from '../services/authentication.service';
+import { MyErrorStateMatcher } from '../errors/error.matcher';
 
 @Component({
   selector: 'app-authorization',
@@ -16,9 +17,11 @@ export class AuthorizationComponent {
   }
 
   public authForm = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
+    email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(255)]),
+    password: new FormControl('', [Validators.required, Validators.maxLength(255)]),
   });
+
+  public matcher = new MyErrorStateMatcher();
 
   public signUp() {
     this.router.navigate([`/registration`]);

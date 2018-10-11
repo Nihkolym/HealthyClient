@@ -6,18 +6,18 @@ import { IUser } from '../../user/user';
 @Injectable()
 export class AuthenticationService {
 
-    private url: string = environment.userUrl;
+    private url: string = environment.url;
 
     constructor(private http: HttpClient) {
 
     }
 
     public signUp(model: IUser) {
-        return this.http.post<IUser>(this.url, model);
+        return this.http.post<IUser>(`${this.url}/users`, model);
     }
 
     public logIn(model: IUser) {
-        return this.http.get<IUser>(this.url);
+        return this.http.get<IUser>(`${this.url}/users/${model.id}`);
     }
 
 }

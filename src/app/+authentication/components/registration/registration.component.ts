@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder, ValidatorFn } from '@angular/forms';
-import { IUser } from 'src/app/user/user';
+import { IUser } from '../../../user/models/User';
 import { AuthenticationService } from '../../services/authentication.service';
-import { MyErrorStateMatcher } from '../../models/errors/error.matcher';
+import { MyErrorStateMatcher } from '../../../models/errors/error.matcher';
+import { switchMap, tap } from 'rxjs/operators';
 
 
 
@@ -13,39 +14,52 @@ import { MyErrorStateMatcher } from '../../models/errors/error.matcher';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
+  public matcher: MyErrorStateMatcher = new MyErrorStateMatcher();
+
+  public registForm: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(255)]),
+    firstName: new FormControl('', [Validators.required, Validators.maxLength(255)]),
+    lastName: new FormControl('', [Validators.required, Validators.maxLength(255)]),
+    passwords: this.fb.group({
+      password: new FormControl('', [Validators.required, Validators.maxLength(255)]),
+      repeat: new FormControl('', [Validators.required, Validators.maxLength(255)])
+    }, { validator: this.matcher.equalValueValidator('password', 'repeat') }),
+  });
 
   constructor(private router: Router, private authService: AuthenticationService, private fb: FormBuilder) {
 
   }
 
-  public matcher = new MyErrorStateMatcher();
-
-  public registForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(255)]),
-    passwords: this.fb.group({
-      password: new FormControl('', [Validators.required, Validators.maxLength(255)]),
-      repeat: new FormControl('', [Validators.required, Validators.maxLength(255)])
-    }, { validator: this.matcher.equalValueValidator('password', 'repeat') }),
-    phone: new FormControl('', [Validators.required, Validators.maxLength(255)])
-  });
-
-  public signUp() {
+  public signUp(): void {
 
     let user: IUser;
 
     user = {
       email: this.registForm.controls['email'].value,
+      firstName: this.registForm.controls['firstName'].value,
+      lastName: this.registForm.controls['lastName'].value,
       password: this.registForm.value.passwords.password,
-      phone: this.registForm.controls['phone'].value
     };
 
-    this.authService.signUp(user.email, user.password, user.phone).subscribe(() => {
-      this.router.navigate(['/authorization']);
-    });
+    this.authService.signUp(user)
+      .pipe(
+        switchMap(
+          () => this.authService.logIn(user.email, user.password),
+        )
+      )
+      .subscribe(
+        () => { },
+        (error) => {
+          this.registForm.setErrors({
+            'badRequest': true,
+          });
+        }
+      );
   }
 
-  public signIn() {
+  public signIn($event: Event): void {
     this.router.navigate([`/authorization`]);
+    $event.preventDefault();
   }
 
 }

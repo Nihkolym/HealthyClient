@@ -1,0 +1,4 @@
+
+<div class="wrap-container">
+    <app-post (deletePost)="delete($event)" *ngFor="let post of posts" class="animated fadeIn post-wrap-container" [post]="post"></app-post>
+</div>

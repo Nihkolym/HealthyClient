@@ -1,0 +1,8 @@
+<div class="new-posts">
+    <h1 class="posts_title">{{ 'Office.NewPosts' | translate }}</h1>
+    <div class="new-post-container">
+        <div class="posts-container">
+            <app-new-post-list (changeStatus)="approve($event)" [posts]="posts"></app-new-post-list>
+        </div>
+    </div>
+</div>

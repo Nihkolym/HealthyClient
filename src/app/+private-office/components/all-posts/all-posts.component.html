@@ -1,0 +1,8 @@
+<div class="all-posts">
+    <h1 class="posts_title">{{ 'Office.AllPosts' | translate }}</h1>
+    <div class="all-post-container">
+        <div class="posts-container">
+            <app-all-post-list (deletePost)="deletePost($event)" [posts]="posts"></app-all-post-list>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+::ng-deep .bar {
+    background-color: #3f51b5 !important;
+}
+
+::ng-deep .bar a {
+    color: white !important;
+}

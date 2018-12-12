@@ -1,0 +1,11 @@
+<div class="approve-dialog">
+  <h1 mat-dialog-title>{{ 'Hi' | translate }}</h1>
+  <div class="approve-content" mat-dialog-content>
+    <div><span class="approve_info">{{ 'Post.Title' | translate }}:</span> {{post.title}}</div>
+    <div><span class="approve_info">{{ 'Post.Description' | translate }}:</span> {{post.description}}</div>
+  </div>
+  <div class="btn-container" mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">{{ 'Buttons.Decline' | translate }}</button>
+    <button mat-button (click)="onOkClick()" cdkFocusInitial>{{ 'Buttons.Approve' | translate }}</button>
+  </div>
+</div>

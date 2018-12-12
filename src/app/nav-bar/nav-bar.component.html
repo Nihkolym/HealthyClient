@@ -1,0 +1,29 @@
+<mat-toolbar class="nav-container" color="primary">
+    <div class="left-navbar">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon class="nav_burger" aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button (click)="moveToProfile()" mat-menu-item>
+                <mat-icon>face</mat-icon>
+                <span [innerHTML]="'Navigation.Office' | translate"></span>
+            </button>
+            <button (click)="logOut()" mat-menu-item>
+                <mat-icon>input</mat-icon>
+                <span [innerHTML]="'Navigation.Logout' | translate"></span>
+            </button>
+        </mat-menu>
+        <div style="margin-left: 40px;">HealthyDreamer</div>
+    </div>
+    <div class="nav_right">
+        <mat-button-toggle-group name="language" [value]="lang" aria-label="language">
+            <mat-button-toggle value="en" (click)="changeLan('en')">En</mat-button-toggle>
+            <mat-button-toggle value="ru" (click)="changeLan('ru')">Ru</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button (click)="moveToAddPost()" class="nav_add-btn" mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+
+</mat-toolbar>

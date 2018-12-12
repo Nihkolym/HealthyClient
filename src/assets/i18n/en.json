@@ -1,0 +1,108 @@
+{
+    "Title": {
+        "SignIn": "Sign In",
+        "SignUp": "Sign Up",
+        "WarnSubJob": "Are you sure that you want subscribe this job?"
+    },
+    "Status": {
+        "OnReview": "On review",
+        "Open": "Open",
+        "Pending": "Pending",
+        "Done": "Done",
+        "Declined": "Declined",
+        "Count": "Count"
+    },
+    "Hi": "Hi",
+    "Search": "Input title",
+    "Users": "Users",
+    "Managers": "Managers",
+    "NewCategory": "New Category",
+    "User": {
+        "FirstName": "First name",
+        "LastName": "Last name",
+        "OldPass": "Old password",
+        "ConfirmPass": "Confirm password",
+        "NewPass": "New password",
+        "Pass": "Password",
+        "Email": "Email",
+        "Phone": "Phone",
+        "Gender": "Gender",
+        "Disease": "Disease"
+    },
+    "Office": {
+        "Profile": "Profile",
+        "Posts": "Posts",
+        "Categories": "Categories",
+        "Users": "Users",
+        "NewPosts": "New Posts",
+        "AllPosts": "All Posts"
+    },
+    "Navigation": {
+        "Office": "My Office",
+        "Posts": "Posts",
+        "Logout": "Logout"
+    },
+    "PostForm": {
+        "Title": "Title",
+        "Description": "Description",
+        "People": "People",
+        "Category": "Category",
+        "Cost": "Cost",
+        "Time": "Time",
+        "Send": "Send"
+    },
+    "Errors": {
+        "Required": "This is required.",
+        "TooMuchPeople": "Too much people.",
+        "RunOfPeople": "Run of people.",
+        "Integer": "Must be integer number.",
+        "IncorectValue": "Incorrect value.",
+        "Date": "Date error.",
+        "TooBigLength": "This is too big length.",
+        "Email": "Must be email.",
+        "PassNotMatch": "Passwords don't match.",
+        "Pass": "Incorrect password.",
+        "EmailOrPass": "Incorrect email or password.",
+        "UserAlreadyExist": "User has already exist."
+    },
+    "Buttons": {
+        "SendOnReview": "Send on review",
+        "Ok": "Ok",
+        "Cancel": "Cancel",
+        "Accept": "Accept",
+        "Hide": "Hide",
+        "ChangePass": "Change Password",
+        "Save": "Save",
+        "Info": "Info",
+        "Approve": "Approve",
+        "Decline": "Decline",
+        "SignUp": "Sign Up",
+        "SignIn": "Sign In",
+        "Reset": "Reset",
+        "Delete": "Delete",
+        "Update": "Update"
+    },
+    "Post": {
+        "CountOfDeals": "peoples has already accepted",
+        "Created": "Created",
+        "User": "User",
+        "Title": "Title",
+        "Description": "Description",
+        "People": "People",
+        "Price": "Price",
+        "Category": "Category",
+        "Status": "Status",
+        "Time": "End"
+    },
+    "Filter": {
+        "Bar": "Filter Bar",
+        "Status": "Status",
+        "Category": "Category",
+        "Start": "Start",
+        "End": "End"
+    },
+    "Notification": {
+        "User": "Data was successfully changed",
+        "Role": "Role was successfully changed"
+    }
+}

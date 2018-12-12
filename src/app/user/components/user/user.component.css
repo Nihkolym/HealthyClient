@@ -1,0 +1,68 @@
+.user-container{
+    width: 100%;
+    border: 3px solid #e2e2e2;
+    padding: 0 10px;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.user_btn {
+    width: 90px;
+    height: 30px;
+    display: block;
+    background-color: #3f51b5;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    outline: none;
+    border: none;
+}
+
+.user_title > h3{
+    margin: 0px;
+    margin-bottom: 5px;
+    width: 200px;
+}
+
+.btn-container{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user_info{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.user_info > h3{
+  margin-right: 50px;
+}
+
+.user-actions{
+    width: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_statistic{
+    overflow-x: scroll;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    word-wrap: break-word;
+    text-align: left;
+}
+
+table, th, td {
+    border: 2px solid #e2e2e2;
+}
+

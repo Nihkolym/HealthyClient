@@ -1,0 +1,47 @@
+<div class="example-container">
+    <div class="example-sidenav">
+        <ul class="list">
+            <li class="list-item">
+                <a [routerLink]="['/profile']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <i class="material-icons">
+                        account_circle
+                    </i>
+                    <span class="subtitle">{{ 'Office.Profile' | translate }}</span>
+                </a>
+            </li>
+            <li *ngIf='role === Role.Admin' class="list-item">
+                <a [routerLink]="['/users']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <i class="list-icon" class="material-icons md-48">face</i>
+                    <span class="subtitle">{{ 'Office.Users' | translate }}</span>
+                </a>
+            </li>
+            <li class="list-item">
+              <a [routerLink]="['/my-posts']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                  <i class="list-icon" class="material-icons md-48">folder</i>
+                  <span class="subtitle">{{ 'Office.Posts' | translate }}</span>
+              </a>
+          </li>
+          <li *ngIf='role === Role.Admin' class="list-item">
+            <a [routerLink]="['/new-posts']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="list-icon" class="material-icons md-48">create_new_folder</i>
+                <span class="subtitle">{{ 'Office.NewPosts' | translate }}</span>
+            </a>
+        </li>
+        <li class="list-item">
+          <a [routerLink]="['/all-posts']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <i class="list-icon" class="material-icons md-48">ballot</i>
+              <span class="subtitle">{{ 'Office.AllPosts' | translate }}</span>
+          </a>
+      </li>
+            <button mat-button>GET INFO</button>
+        </ul>
+
+    </div>
+
+    <div class="main-content">
+        <router-outlet>
+
+        </router-outlet>
+    </div>
+
+</div>

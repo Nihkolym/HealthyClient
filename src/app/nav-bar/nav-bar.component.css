@@ -1,0 +1,38 @@
+.nav-container{
+    display: flex; 
+    justify-content: space-between;
+    padding: 0px 3%; 
+    height: 75px;
+}
+
+.left-navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+}
+
+.nav_burger{
+    font-size: 50px;
+}
+
+.nav_right{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_local{
+    margin-right: 20px;
+    color: white;
+}
+
+.active {
+    border-bottom: 2px solid red;
+  }
+  
+  
+.mat-button-toggle {
+    font-size: 16px;
+}

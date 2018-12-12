@@ -1,0 +1,24 @@
+<form (submit)="send()" [formGroup]="postForm" class="post-form" action="">
+    <mat-form-field class="title_field">
+        <input matInput placeholder="{{ 'PostForm.Title' | translate }}*" [formControl]="postForm.controls['title']" [errorStateMatcher]="matcher">
+        <mat-error *ngIf="postForm.controls['title'].hasError('required')">
+            {{ 'Errors.Required' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="description_field">
+        <textarea class="description_textarea" matInput placeholder="{{ 'PostForm.Description' | translate }}*" [formControl]="postForm.controls['description']"
+            [errorStateMatcher]="matcher"></textarea>
+        <mat-error *ngIf="postForm.controls['description'].hasError('required')">
+            {{ 'Errors.Required' | translate }}
+        </mat-error>
+        <mat-error *ngIf="postForm.controls['description'].hasError('max')">
+            {{ 'Errors.TooMuchPeople' | translate }}
+        </mat-error>
+    </mat-form-field>
+
+    <ng-content>
+
+    </ng-content>
+
+</form>

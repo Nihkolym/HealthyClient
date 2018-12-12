@@ -1,0 +1,8 @@
+<div class="update-post-container">
+    <app-post-form [post]="post" (sub)="editPost($event)">
+        <div class="edit-btn-container">
+            <button type="submit" class="update-btn">{{ 'Buttons.Ok' | translate | uppercase }}</button>
+            <button (click)="cancel()" type="button" class="delete-btn">{{ 'Buttons.Cancel' | translate | uppercase }}</button>
+        </div>
+    </app-post-form>
+</div>

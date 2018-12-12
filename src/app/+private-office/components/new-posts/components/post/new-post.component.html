@@ -1,0 +1,13 @@
+
+<div class="post-container">
+    <div class="post_description">
+        <h2 class="post_title">{{post.title}}</h2>
+        <div>{{ 'Post.User' | translate }}: {{post.user.firstName + " " + post.user.lastName}}</div>
+        <br><br>
+        <div>{{post.description}}</div>
+    </div>
+
+    <div class="post_bottom">
+        <button (click)="info()" mat-button class="post_accept">{{ 'Buttons.Info' | translate }}</button>
+    </div>
+</div>

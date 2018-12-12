@@ -1,0 +1,18 @@
+
+<div class="post-container">
+    <div class="post_description">
+        <h2 class="post_title">{{post.title}}</h2>
+        <p class="post_description">{{post.description}}</p>
+        <div>{{ 'Post.User' | translate }}: {{ post.user.firstName + " " + post.user.lastName }}</div>
+    </div>
+
+    <div class="post_bottom">
+        <div class="btns-container">
+            <div *ngIf="role === Role.Admin">
+                <button (click)="update()" mat-button class="post_btn">{{ 'Buttons.Update' | translate }}</button>
+                <button (click)="delete()" mat-button class="post_btn">{{ 'Buttons.Delete' | translate }}</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+<form (submit)="save($event)" [formGroup]="userForm">
+    <h2 class="profile_title">{{ 'Office.Profile' | translate}}</h2>
+
+    <div class="profile_main">
+        <mat-form-field class="profile_field">
+            <input matInput placeholder="{{ 'User.FirstName' | translate}}*" [formControl]="userForm.controls['info'].controls['firstName']"
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="userForm.controls['info'].controls['firstName'].hasError('required')">
+                    {{ 'Errors.Required' | translate }}
+            </mat-error>
+            <mat-error *ngIf="userForm.controls['info'].controls['firstName'].hasError('maxlength')">
+                {{ 'Errors.TooBigLength' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="profile_field">
+            <input matInput placeholder="{{ 'User.LastName' | translate}}*" [formControl]="userForm.controls['info'].controls['lastName']"
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="userForm.controls['info'].controls['lastName'].hasError('required')">
+                {{ 'Errors.Required' | translate }}
+            </mat-error>
+            <mat-error *ngIf="userForm.controls['info'].controls['lastName'].hasError('maxlength')">
+                {{ 'Errors.TooBigLength' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="profile_field">
+            <input type="email" matInput placeholder="{{ 'User.Email' | translate }}*" [formControl]="userForm.controls['info'].controls['email']"
+                [errorStateMatcher]="matcher">
+            <mat-error *ngIf="userForm.controls['info'].controls['email'].hasError('required')">
+                {{ 'Errors.Required' | translate }}
+            </mat-error>
+            <mat-error *ngIf="userForm.controls['info'].controls['email'].hasError('maxlength')">
+                {{ 'Errors.TooBigLength' | translate }}
+            </mat-error>
+            <mat-error *ngIf="userForm.controls['info'].controls['email'].hasError('email')">
+                {{ 'Errors.Email' | translate }}
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="profile_field">
+            <mat-select placeholder="{{ 'User.Gender' | translate}}" matInput [formControl]="userForm.controls['info'].controls['gender']">
+                <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                  {{gender.viewValue}}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="profile_field">
+            <mat-select placeholder="{{ 'User.Disease' | translate }}" matInput [formControl]="userForm.controls['info'].controls['idOfDisease']">
+                <mat-option *ngFor="let disease of diseases" [value]="disease.id">
+                  {{disease.name}}
+                </mat-option>
+              </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="profile_password-container">
+        <button type="button" (click)="toggle()" class="form_btn">{{isPasswordOpen ?  ('Buttons.Hide' | translate) : ('Buttons.ChangePass' | translate) }}</button>
+
+        <div *ngIf="isPasswordOpen" class="password_field-container">
+            <mat-form-field class="profile_field">
+                <input type="password" matInput placeholder="{{ 'User.OldPass' | translate}}*" [formControl]="userForm.controls['passwords'].controls['oldPassword']"
+                    [errorStateMatcher]="matcher">
+                <mat-error *ngIf="userForm.controls['passwords'].controls['oldPassword'].hasError('required')">
+                    {{ 'Errors.Required' | translate }}
+                </mat-error>
+                <mat-error *ngIf="userForm.controls['passwords'].controls['oldPassword'].hasError('maxlength')">
+                    {{ 'Errors.TooBigLength' | translate }}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="profile_field">
+                <input type="password" matInput placeholder="{{ 'User.NewPass' | translate}}*" [formControl]="userForm.controls['passwords'].controls['newPassword']"
+                    [errorStateMatcher]="matcher">
+                <mat-error *ngIf="userForm.controls['passwords'].controls['newPassword'].hasError('required')">
+                    {{ 'Errors.Required' | translate }}
+                </mat-error>
+                <mat-error *ngIf="userForm.controls['passwords'].controls['newPassword'].hasError('maxlength')">
+                    {{ 'Errors.TooBigLength' | translate }}
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="profile_field">
+                <input type="password" matInput placeholder="{{ 'User.ConfirmPass' | translate}}*" [formControl]="userForm.controls['passwords'].controls['repeat']"
+                    [errorStateMatcher]="matcher">
+
+                <mat-error *ngIf="userForm.controls['passwords'].controls['repeat'].hasError('required')">
+                    {{ 'Errors.Required' | translate }}
+                </mat-error>
+                <mat-error *ngIf="userForm.controls['passwords'].controls['repeat'].hasError('maxlength')">
+                    {{ 'Errors.TooBigLength' | translate }}
+                </mat-error>
+                <mat-error *ngIf="userForm.controls['passwords'].controls['repeat'].hasError('equalValue')">
+                    {{ 'Errors.PassNotMatch' | translate }}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-error *ngIf="userForm.hasError('badRequest')">
+                {{ 'Errors.Pass' | translate }}
+            </mat-error>
+
+        </div>
+    </div>
+
+    <div class="profile_btn-container">
+        <button type="submit" class="form_btn">{{ 'Buttons.Save' | translate }}</button>
+        <button (click)="cancel()" type="button" class="form_btn">{{ 'Buttons.Cancel' | translate }}</button>
+    </div>
+
+</form>

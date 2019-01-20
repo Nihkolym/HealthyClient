@@ -1,4 +1,3 @@
-import { GoogleComponent } from './../components/google/google.component';
 import { AllPostsComponent } from './../components/all-posts/all-posts.component';
 import { PostsComponent } from './../components/posts/posts.component';
 import { NgModule } from '@angular/core';
@@ -40,9 +39,6 @@ const privateOfficeRoutes: Routes = [
       },
       {
         path: 'my-posts', component: PostsComponent, canActivate: [AuthenticationGuardService],
-      },
-      {
-        path: 'google', component: GoogleComponent, canActivate: [AuthenticationGuardService],
       },
     ]
   },

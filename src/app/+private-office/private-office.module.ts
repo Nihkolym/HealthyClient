@@ -25,7 +25,6 @@ import { PostsComponent } from './components/posts/posts.component';
 import { RecDialogComponent } from '../dialogs/rec-dialog/rec-dialog.component';
 import { StatisticComponent } from './components/statistic/statistic.component';
 import { ChartsModule } from 'ng2-charts';
-import { GoogleComponent } from './components/google/google.component';
 import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
@@ -51,7 +50,6 @@ import { AgmCoreModule } from '@agm/core';
     StatisticComponent,
     ApproveDialogComponent,
     RecDialogComponent,
-    GoogleComponent
   ],
   imports: [
     AgmCoreModule.forRoot({

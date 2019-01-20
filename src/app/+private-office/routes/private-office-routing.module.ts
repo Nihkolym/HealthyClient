@@ -1,3 +1,4 @@
+import { GoogleComponent } from './../components/google/google.component';
 import { AllPostsComponent } from './../components/all-posts/all-posts.component';
 import { PostsComponent } from './../components/posts/posts.component';
 import { NgModule } from '@angular/core';
@@ -9,6 +10,7 @@ import { UsersComponent } from '../components/users/users.component';
 import { RoleGuardService } from '../../../app/+authentication/services/role-guard.service';
 import { Role } from '../../models/Role';
 import { NewPostsComponent } from '../components/new-posts/new-posts.component';
+import { StatisticComponent } from '../components/statistic/statistic.component';
 
 const privateOfficeRoutes: Routes = [
   {
@@ -32,6 +34,15 @@ const privateOfficeRoutes: Routes = [
         data: {
           expectedRole: Role.Admin
         },
+      },
+      {
+        path: 'statistic', component: StatisticComponent, canActivate: [AuthenticationGuardService],
+      },
+      {
+        path: 'my-posts', component: PostsComponent, canActivate: [AuthenticationGuardService],
+      },
+      {
+        path: 'google', component: GoogleComponent, canActivate: [AuthenticationGuardService],
       },
     ]
   },

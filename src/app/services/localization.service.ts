@@ -9,10 +9,6 @@ export class LocalizationService {
 
     public Init() {
         this.tranService.setDefaultLang('en');
-
-        const currentLocal = this.Local ? this.Local : window.navigator.language.substr(0, 2);
-
-        this.tranService.use(currentLocal);
     }
 
     public set Local(val: string) {

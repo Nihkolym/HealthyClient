@@ -1,0 +1,9 @@
+<div class="approve-dialog">
+    <h1 mat-dialog-title>{{ 'Hi' | translate }}</h1>
+    <div class="approve-content" mat-dialog-content>
+      <div class="item" *ngIf="rec.temperature"><span class="approve_info">{{ 'Recommendation.RecommendedTemperature' | translate }}:</span> {{rec.temperature}}*C</div>
+      <div class="item" *ngIf="rec.humidity"><span class="approve_info">{{ 'Recommendation.RecommendedHumidity' | translate }}:</span> {{rec.humidity}}%</div>
+      <div class="item" *ngIf="rec.pose"><span class="approve_info">{{ 'Recommendation.RecommendedPoseForDream' | translate }}:</span> {{rec.pose}}</div>
+      <div class="item" *ngIf="rec.notes"><span class="approve_info">{{ 'Recommendation.Recommendations' | translate }}:</span> {{rec.notes}}</div>
+    </div>
+  </div>

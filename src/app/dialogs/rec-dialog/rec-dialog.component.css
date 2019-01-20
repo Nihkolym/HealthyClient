@@ -1,0 +1,12 @@
+.approve-dialog{
+  width: 500px;
+  height: 500px;
+}
+
+.approve_info{
+  font-weight: bold;
+}
+
+.item {
+  margin-bottom: 10px;
+}

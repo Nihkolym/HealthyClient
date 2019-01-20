@@ -1,4 +1,4 @@
-<form (submit)="signIn()" class="authorization-container" [formGroup]="authForm">
+<form (submit)="signIn()" class="authorization-container" [formGroup]="authForm" (keydown)="keyDown($event)">
     <h2 class="authorization_title">{{ 'Buttons.SignIn' | translate | uppercase }}</h2>
 
     <mat-form-field>

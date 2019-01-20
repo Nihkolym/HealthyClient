@@ -40,4 +40,11 @@ export class AuthorizationComponent {
         });
       });
   }
+
+  public keyDown($event) {
+    if ($event.keyCode === 13) {
+      this.signIn();
+      $event.preventDefault();
+    }
+  }
 }

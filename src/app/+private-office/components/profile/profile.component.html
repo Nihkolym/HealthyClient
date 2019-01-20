@@ -40,7 +40,10 @@
 
         <mat-form-field class="profile_field">
             <mat-select placeholder="{{ 'User.Gender' | translate}}" matInput [formControl]="userForm.controls['info'].controls['gender']">
-                <mat-option *ngFor="let gender of genders" [value]="gender.value">
+              <mat-option [value]="">
+                None
+              </mat-option>
+              <mat-option *ngFor="let gender of genders" [value]="gender.value">
                   {{gender.viewValue}}
                 </mat-option>
               </mat-select>
@@ -48,11 +51,22 @@
 
         <mat-form-field class="profile_field">
             <mat-select placeholder="{{ 'User.Disease' | translate }}" matInput [formControl]="userForm.controls['info'].controls['idOfDisease']">
-                <mat-option *ngFor="let disease of diseases" [value]="disease.id">
+                <mat-option [value]="">
+                    None
+                  </mat-option>
+              <mat-option *ngFor="let disease of diseases" [value]="disease.id">
                   {{disease.name}}
                 </mat-option>
               </mat-select>
         </mat-form-field>
+
+        <mat-form-field class="profile_field">
+          <input matInput placeholder="{{'User.Age' | translate}}" maxlength="2" [formControl]="userForm.controls['info'].controls['age']"
+              [errorStateMatcher]="matcher" min="1" max="100">
+          <mat-error *ngIf="userForm.controls['info'].controls['age'].hasError('pattern')">
+            {{ 'Errors.Integer' | translate }}
+          </mat-error>
+      </mat-form-field>
     </div>
 
     <div class="profile_password-container">
@@ -93,11 +107,6 @@
                     {{ 'Errors.PassNotMatch' | translate }}
                 </mat-error>
             </mat-form-field>
-
-            <mat-error *ngIf="userForm.hasError('badRequest')">
-                {{ 'Errors.Pass' | translate }}
-            </mat-error>
-
         </div>
     </div>
 

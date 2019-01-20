@@ -6,11 +6,11 @@ export interface IUser {
   firstName: string;
   lastName: string;
   email: string;
-  password: string;
+  password?: string;
   role?: number;
   idOfDisease?: number;
   idOfPersonalReccomandation?: number;
-  dateOfBirth?: string;
+  age?: number;
   gender?: number;
   disease?: IDisease;
   personalReccomandation?: IPersonalReccomandation;

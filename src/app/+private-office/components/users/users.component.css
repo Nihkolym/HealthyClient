@@ -14,3 +14,11 @@
     margin-bottom: 20px;
     font-weight: 400;
 }
+
+table {
+  width: 100%;
+}
+
+.disabled{
+  color: grey;
+}

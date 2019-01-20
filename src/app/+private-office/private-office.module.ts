@@ -22,10 +22,16 @@ import { HttpClient } from '@angular/common/http';
 import { NewPostComponent } from './components/new-posts/components/post/new-post.component';
 import { NewPostsComponent } from './components/new-posts/new-posts.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { RecDialogComponent } from '../dialogs/rec-dialog/rec-dialog.component';
+import { StatisticComponent } from './components/statistic/statistic.component';
+import { ChartsModule } from 'ng2-charts';
+import { GoogleComponent } from './components/google/google.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
  entryComponents: [
   ApproveDialogComponent,
+  RecDialogComponent,
  ],
   declarations: [
     PrivateOfficeComponent,
@@ -42,9 +48,16 @@ import { PostsComponent } from './components/posts/posts.component';
     PostListComponent,
     PostsComponent,
     PostComponent,
+    StatisticComponent,
     ApproveDialogComponent,
+    RecDialogComponent,
+    GoogleComponent
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBvtNq4sVj_NldtvuOvpZ_LojYpJJH9YTM'
+    }),
+    ChartsModule,
     InfiniteScrollModule,
     ReactiveFormsModule,
     PrivateOfficeRoutingModule,

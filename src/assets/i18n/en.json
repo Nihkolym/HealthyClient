@@ -1,21 +1,14 @@
 {
     "Title": {
         "SignIn": "Sign In",
-        "SignUp": "Sign Up",
-        "WarnSubJob": "Are you sure that you want subscribe this job?"
+        "SignUp": "Sign Up"
     },
-    "Status": {
-        "OnReview": "On review",
-        "Open": "Open",
-        "Pending": "Pending",
-        "Done": "Done",
-        "Declined": "Declined",
-        "Count": "Count"
-    },
-    "Hi": "Hi",
-    "Search": "Input title",
+    "Hi": "Personal Reccomendation",
     "Users": "Users",
-    "Managers": "Managers",
+    "SelectChart": {
+      "Diseases": "Diseases",
+      "AverageAge": "Average Age"
+    },
     "NewCategory": "New Category",
     "User": {
         "FirstName": "First name",
@@ -24,18 +17,21 @@
         "ConfirmPass": "Confirm password",
         "NewPass": "New password",
         "Pass": "Password",
+        "Age": "Age",
         "Email": "Email",
         "Phone": "Phone",
         "Gender": "Gender",
-        "Disease": "Disease"
+        "Disease": "Disease",
+        "Actions": "Actions"
     },
+    "PassChange": "Password was successfully changed",
     "Office": {
         "Profile": "Profile",
         "Posts": "Posts",
-        "Categories": "Categories",
         "Users": "Users",
         "NewPosts": "New Posts",
-        "AllPosts": "All Posts"
+        "AllPosts": "All Posts",
+        "Statistic": "Statistic"
     },
     "Navigation": {
         "Office": "My Office",
@@ -63,7 +59,8 @@
         "PassNotMatch": "Passwords don't match.",
         "Pass": "Incorrect password.",
         "EmailOrPass": "Incorrect email or password.",
-        "UserAlreadyExist": "User has already exist."
+        "UserAlreadyExist": "User has already exist.",
+        "HaveNoRec": "Fill info about yourself to get personal reccomendation."
     },
     "Buttons": {
         "SendOnReview": "Send on review",
@@ -80,7 +77,14 @@
         "SignIn": "Sign In",
         "Reset": "Reset",
         "Delete": "Delete",
-        "Update": "Update"
+        "Update": "Update",
+        "GetInfo": "Get Info"
+    },
+    "Recommendation": {
+      "RecommendedTemperature": "Recommended temperature",
+      "RecommendedHumidity": "Recommended humidity",
+      "RecommendedPoseForDream": "Recommended pose for dream",
+      "Recommendations": "Recommendations"
     },
     "Post": {
         "CountOfDeals": "peoples has already accepted",

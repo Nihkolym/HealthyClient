@@ -1,0 +1,96 @@
+{
+    "Title": {
+        "SignIn": "Ввійти",
+        "SignUp": "Зареєструватися"
+    },
+    "Hi": "Рекомендація",
+    "Users": "Користувачі",
+    "Search": "Введіть назву",
+    "User": {
+        "FirstName": "Ім'я",
+        "LastName": "Прізвище",
+        "OldPass": "Старий пароль",
+        "ConfirmPass": "Підтвердити пароль",
+        "NewPass": "Новий пароль",
+        "Age": "Вік",
+        "Pass": "Пароль",
+        "Email": "Пошта",
+        "Phone": "Телефон",
+        "Gender": "Стать",
+        "Disease": "Хвороба",
+        "Actions": "Дії"
+    },
+    "SelectChart": {
+      "Diseases": "Хвороби",
+      "AverageAge": "Середній Вік"
+    },
+    "Office": {
+        "Profile": "Профіль",
+        "Posts": "Мої пости",
+        "Users": "Користувачі",
+        "NewPosts": "Нові Пости",
+        "AllPosts": "Всі Пости",
+        "Statistic": "Статистика"
+    },
+    "Navigation": {
+        "Office": "Мій оффіс",
+        "Posts": "Пости",
+        "Logout": "Вийти"
+    },
+    "PostForm": {
+        "Title": "Назва",
+        "Description": "Опис",
+        "Send": "Відправити"
+    },
+    "Errors": {
+        "Required": "Це поле обов'язкове.",
+        "IncorectValue": "Не відповідає формату.",
+        "Date": "Не вірно введена дата.",
+        "TooBigLength": "Занадто велика довжина.",
+        "PassNotMatch": "Паролі не співпадають.",
+        "Pass": "Не вірний пароль.",
+        "EmailOrPass": "Не вірний адрес чи пароль.",
+        "UserAlreadyExist": "Користувач вже існує.",
+        "HaveNoRec": "Заповніть данні про себе для отримання інформації"
+    },
+    "PassChange": "Пароль був успішно змінений",
+    "Recommendation": {
+      "RecommendedTemperature": "Рекомендована температура",
+      "RecommendedHumidity": "Рекомендована вологість",
+      "RecommendedPoseForDream": "Рекомендована поза для сну",
+      "Recommendations": "Рекомендації"
+    },
+    "Buttons": {
+        "SendOnReview": "Відправити на розгляд",
+        "Ok": "Прийняти",
+        "Cancel": "Скасувати",
+        "Accept": "Прийняти",
+        "Hide": "Сховати",
+        "ChangePass": "Змінити пароль",
+        "Save": "Зберегти",
+        "Info": "Детальніше",
+        "Approve": "Підтвердити",
+        "Decline": "Відхилити",
+        "SignUp": "Зареєструватися",
+        "SignIn": "Ввійти",
+        "Reset": "Сброс",
+        "Delete": "Видалити",
+        "Update": "Редагувати",
+        "GetInfo": "Отримати інформацію"
+    },
+    "Post": {
+        "CountOfDeals": "людей подписалось",
+        "Created": "Создано",
+        "User": "Користувач",
+        "Title": "Назва",
+        "Description": "Опис",
+        "People": "Кол-во людей",
+        "Price": "Стоимость",
+        "Category": "Категория",
+        "Status": "Статус",
+        "Time": "Конец"
+    },
+    "Notification": {
+        "User": "Данні були змінені"
+    }
+}

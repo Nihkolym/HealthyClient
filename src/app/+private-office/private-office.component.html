@@ -33,9 +33,24 @@
               <span class="subtitle">{{ 'Office.AllPosts' | translate }}</span>
           </a>
       </li>
-            <button mat-button>GET INFO</button>
+      <li class="list-item">
+        <a [routerLink]="['/statistic']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="material-icons">
+              <mat-icon> bar_chart</mat-icon>
+            </i>
+            <span class="subtitle">{{ 'Office.Statistic' | translate }}</span>
+        </a>
+    </li>
+    <li class="list-item" *ngIf="true">
+      <a [routerLink]="['/google']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <i class="material-icons">
+            <mat-icon> bar_chart</mat-icon>
+          </i>
+          <span class="subtitle">{{ 'Office.Statistic' | translate }}</span>
+      </a>
+  </li>
+            <button (click)="getInfo()" mat-button>{{ 'Buttons.GetInfo' | translate }}</button>
         </ul>
-
     </div>
 
     <div class="main-content">

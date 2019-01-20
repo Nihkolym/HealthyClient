@@ -1,5 +1,5 @@
 <div class="my-posts">
-    <h1 class="posts_title">{{ 'Office.Posts' | translate }}</h1>
+    <h1>{{ 'Office.Posts' | translate }}</h1>
     <div class="my-post-container">
         <div class="posts-container">
             <app-post-list (deletePost)="deletePost($event)" [posts]="posts"></app-post-list>

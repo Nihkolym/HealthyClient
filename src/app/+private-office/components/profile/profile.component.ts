@@ -1,3 +1,5 @@
+import { ErrorDialogComponent } from './../../../dialogs/error-dialog/error-dialog.component';
+import { MatDialog } from '@angular/material';
 import { DiseaseService } from './../../../services/disease.service';
 import { IDisease } from './../../../user/models/Disease';
 import {genders} from './../../../models/Gender';
@@ -29,6 +31,7 @@ export class ProfileComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(255)]),
       idOfDisease: new FormControl(''),
       gender: new FormControl(''),
+      age: new FormControl('', Validators.pattern('[0-9]*')),
     }),
     passwords: this.fb.group({
       oldPassword: new FormControl('', [Validators.required, Validators.maxLength(255)]),
@@ -41,6 +44,7 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private notifyService: NotificationService,
     private diseaseService: DiseaseService,
+    private dialog: MatDialog,
   ) {
 
   }
@@ -68,13 +72,24 @@ export class ProfileComponent implements OnInit {
   public save($event) {
     $event.preventDefault();
 
+    const oldPassword = this.userForm.value.passwords.oldPassword;
+    const newPassword = this.userForm.value.passwords.newPassword;
+
+    if (oldPassword && newPassword) {
+      this.userService.changePassword(this.user.id, newPassword, oldPassword)
+        .subscribe(
+          () => {
+            this.notifyService.notify('PassChange');
+          },
+          () => {
+            this.notifyService.notify('Errors.Pass');
+          }
+        );
+    }
+
     if (
-      (this.userForm.controls.info.valid && !this.isPasswordOpen)
-      ||
-      (this.userForm.valid && this.isPasswordOpen)
+      (this.userForm.controls.info.valid)
     ) {
-      const oldPassword = this.userForm.value.passwords.oldPassword;
-      const newPassword = this.userForm.value.passwords.newPassword;
 
       const user = {
         id: this.user.id,
@@ -83,22 +98,20 @@ export class ProfileComponent implements OnInit {
         gender: this.userForm.controls.info['controls']['gender'].value,
         idOfDisease: this.userForm.controls.info['controls']['idOfDisease'].value,
         email: this.userForm.controls.info['controls']['email'].value,
-        password: this.user.password,
+        age: this.userForm.controls.info['controls']['age'].value,
       };
 
       if (newPassword) {
         Object.assign(user, newPassword);
       }
 
-      this.userService.updateUser(user,
-        oldPassword, newPassword
-      ).subscribe(() => {
-        this.notifyService.notify('Notification.User');
+      this.userService.updateUser(user).subscribe((data: any) => {
+        if (data.result) {
+          this.notifyService.notify('Notification.User');
+        }
       },
         (err) => {
-          this.userForm.setErrors({
-            'badRequest': true
-          });
+
         });
     }
   }

@@ -57,6 +57,13 @@ export class RegistrationComponent {
       );
   }
 
+  public keyDown($event) {
+    if ($event.keyCode === 13) {
+      this.signUp();
+      $event.preventDefault();
+    }
+  }
+
   public signIn($event: Event): void {
     this.router.navigate([`/authorization`]);
     $event.preventDefault();

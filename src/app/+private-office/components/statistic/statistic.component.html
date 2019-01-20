@@ -1,0 +1,20 @@
+<div class="statistic-container">
+  <h1>{{'Office.Statistic' | translate}}</h1>
+  <div *ngIf="users && diseases" style="display: block; width: 75%;">
+    <ng-container   *ngTemplateOutlet="chartType !== 'bar' ? doughnut : bar"></ng-container>
+
+    <ng-template #bar>
+      <canvas baseChart [legend]="false"  [datasets]="dataset"  [labels]='labels' [chartType]="chartType"></canvas>
+    </ng-template>
+    <ng-template  #doughnut>
+      <canvas baseChart [data]="data" [labels]='labels' [chartType]="chartType"></canvas>
+    </ng-template>
+
+    <mat-select class="chart-select" value='0'>
+      <mat-option value="0" (click)="setDoughnutData()">{{'SelectChart.Diseases' | translate}}</mat-option>
+      <mat-option value="1" (click)="setDiagramData()">{{'SelectChart.AverageAge' | translate}}</mat-option>
+    </mat-select>
+  </div>
+</div>
+
+

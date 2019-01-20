@@ -1,7 +1,46 @@
 <div class="users-container">
     <h2 class="users_title">{{'Office.Users' | translate}}</h2>
 
-    <div class="users-list_container">
-        <app-user-list (remove)="remove($event)" [users]="users"></app-user-list>
-    </div>
+    <table mat-table [dataSource]="users" class="mat-elevation-z8">
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> {{'User.FirstName' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> {{'User.LastName' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> {{'User.Age' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> {{'User.Gender' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>{{'User.Actions' | translate}}</th>
+        <td mat-cell *matCellDef="let element">
+            <mat-icon class="mat-18" style="cursor: pointer;" (click)="remove(element.id)">delete</mat-icon>
+            <mat-icon class="mat-18" [class.disabled]="!element.idOfPersonalReccomandation" style="cursor: pointer;" (click)="getUserReccomendation(element.id)">backup icon</mat-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="disease">
+          <th mat-header-cell *matHeaderCellDef> {{'User.Disease' | translate}} </th>
+          <td mat-cell *matCellDef="let element">{{getDisease(element.idOfDisease)}}</td>
+        </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> {{'User.Email' | translate}} </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 </div>

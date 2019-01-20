@@ -1,3 +1,4 @@
+import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,12 +34,13 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  entryComponents: [SnackBarComponent, NotificationComponent],
+  entryComponents: [SnackBarComponent, NotificationComponent, ErrorDialogComponent],
   declarations: [
     AppComponent,
     NavBarComponent,
     SnackBarComponent,
-    NotificationComponent
+    NotificationComponent,
+    ErrorDialogComponent
   ],
   imports: [
     HttpClientModule,

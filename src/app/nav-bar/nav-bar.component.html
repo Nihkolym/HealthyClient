@@ -13,12 +13,12 @@
                 <span [innerHTML]="'Navigation.Logout' | translate"></span>
             </button>
         </mat-menu>
-        <div style="margin-left: 40px;">HealthyDreamer</div>
+        <div style="margin-left: 40px;">HDreamer</div>
     </div>
     <div class="nav_right">
         <mat-button-toggle-group name="language" [value]="lang" aria-label="language">
             <mat-button-toggle value="en" (click)="changeLan('en')">En</mat-button-toggle>
-            <mat-button-toggle value="ru" (click)="changeLan('ru')">Ru</mat-button-toggle>
+            <mat-button-toggle value="ru" (click)="changeLan('ua')">Ua</mat-button-toggle>
         </mat-button-toggle-group>
         <button (click)="moveToAddPost()" class="nav_add-btn" mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>add</mat-icon>

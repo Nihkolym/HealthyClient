@@ -1,0 +1,10 @@
+.chart-select{
+  position: absolute;
+  width: 150px;
+  right: 5px;
+  top: 5px;
+}
+
+.statistic-container{
+  position: relative;
+}

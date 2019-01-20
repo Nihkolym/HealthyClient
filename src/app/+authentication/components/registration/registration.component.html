@@ -1,4 +1,4 @@
-<form (submit)="signUp()" class="registration-container" [formGroup]="registForm">
+<form (submit)="signUp()" class="registration-container" [formGroup]="registForm" (keydown)="keyDown($event)">
     <h2 class="registration_title">{{ 'Title.SignUp' | translate | uppercase }}</h2>
 
     <mat-form-field>
